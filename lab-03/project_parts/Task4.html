@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета користувача (Завдання 4)</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; color: #333; }
+        form { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; }
+        fieldset { border: 1px solid #ccc; border-radius: 6px; padding: 15px; margin-bottom: 20px; }
+        legend { font-weight: bold; color: #0056b3; padding: 0 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .radio-group label, .checkbox-group label { display: inline-block; font-weight: normal; margin-right: 15px; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"], select, textarea, input[list] {
+            width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        button { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-right: 10px; }
+        button[type="submit"] { background-color: #28a745; color: white; }
+        button[type="reset"] { background-color: #dc3545; color: white; }
+        .info-block { background: #e9ecef; padding: 15px; border-radius: 6px; max-width: 800px; margin: 20px auto; font-size: 14px; }
+        code { background: #d6d8db; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      Форма налаштована на POST з enctype="multipart/form-data" 
+      для коректної передачі файлів. 
+    -->
+    <form action="questionnaire.html" method="post" enctype="multipart/form-data">
+        
+        <!-- Блок 1: Основна інформація -->
+        <fieldset>
+            <legend>Особисті дані</legend>
+            
+            <div class="form-group">
+                <label for="fullName">ПІБ:</label>
+                <input type="text" id="fullName" name="fullName" value="" placeholder="Введіть ваше ПІБ" required tabindex="1">
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Дата народження:</label>
+                <input type="date" id="birthDate" name="birthDate" value="2000-01-01" required tabindex="2">
+            </div>
+
+            <div class="form-group">
+                <label for="userEmail">Електронна пошта (Email):</label>
+                <!-- pattern для email та відключення автозаповнення -->
+                <input type="email" id="userEmail" name="userEmail" value="" placeholder="example@domain.com" autocomplete="off" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" tabindex="3">
+            </div>
+
+            <div class="form-group">
+                <label for="userPhone">Мобільний номер:</label>
+                <!-- pattern: +380 та 9 цифр -->
+                <input type="tel" id="userPhone" name="userPhone" value="" placeholder="+380XXXXXXXXX" required pattern="^\+380\d{9}$" tabindex="4">
+            </div>
+
+            <div class="form-group">
+                <label for="userPass">Пароль:</label>
+                <!-- pattern: рівно 6 символів, мінімум 1 велика, 1 мала літера, 1 цифра -->
+                <input type="password" id="userPass" name="userPass" value="" placeholder="Пароль (6 символів, a-z, A-Z, 0-9)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}" tabindex="5">
+            </div>
+        </fieldset>
+
+        <!-- Блок 2: Опитування та вподобання -->
+        <fieldset>
+            <legend>Вподобання та деталі</legend>
+
+            <!-- Radio-buttons: Блок 1 -->
+            <div class="form-group radio-group">
+                <label>Ваша стать:</label><br>
+                <label><input type="radio" name="gender" value="male" tabindex="6"> Чоловіча</label>
+                <label><input type="radio" name="gender" value="female" tabindex="7"> Жіноча</label>
+                <label><input type="radio" name="gender" value="other" tabindex="8"> Інша</label>
+            </div>
+
+            <!-- Radio-buttons: Блок 2 (З активністю за замовчуванням) -->
+            <div class="form-group radio-group">
+                <label>Ваш рівень володіння HTML:</label><br>
+                <label><input type="radio" name="htmlLevel" value="beginner" tabindex="9"> Початківець</label>
+                <label><input type="radio" name="htmlLevel" value="intermediate" checked tabindex="10"> Середній (за замовчуванням)</label>
+                <label><input type="radio" name="htmlLevel" value="advanced" tabindex="11"> Професіонал</label>
+            </div>
+
+            <!-- Check-buttons: 4 значення -->
+            <div class="form-group checkbox-group">
+                <label>Виберіть ваші хобі:</label><br>
+                <label><input type="checkbox" name="hobbies[]" value="reading" tabindex="12"> Читання</label>
+                <label><input type="checkbox" name="hobbies[]" value="sports" tabindex="13"> Спорт</label>
+                <label><input type="checkbox" name="hobbies[]" value="music" tabindex="14"> Музика</label>
+                <label><input type="checkbox" name="hobbies[]" value="traveling" tabindex="15"> Подорожі</label>
+            </div>
+
+            <!-- Випадний список (5 значень, 3-тє за замовчуванням) -->
+            <div class="form-group">
+                <label for="country">Країна проживання:</label>
+                <select id="country" name="country" tabindex="16">
+                    <option value="pl">Польща</option>
+                    <option value="ro">Румунія</option>
+                    <option value="ua" selected>Україна</option>
+                    <option value="md">Молдова</option>
+                    <option value="sk">Словаччина</option>
+                </select>
+            </div>
+
+            <!-- Випадний список з множинним вибором (6 значень) -->
+            <div class="form-group">
+                <label for="languages">Мови програмування, які вивчаєте (Ctrl/Cmd + клік):</label>
+                <select id="languages" name="languages[]" multiple size="4" tabindex="17">
+                    <option value="html">HTML/CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="csharp">C#</option>
+                </select>
+            </div>
+
+            <!-- Випадний список з optgroup (4 групи по 3 значення) -->
+            <div class="form-group">
+                <label for="course">Оберіть бажаний напрямок навчання:</label>
+                <select id="course" name="course" tabindex="18">
+                    <optgroup label="Веб-розробка">
+                        <option value="frontend">Front-End</option>
+                        <option value="backend">Back-End</option>
+                        <option value="fullstack">Full-Stack</option>
+                    </optgroup>
+                    <optgroup label="Дизайн">
+                        <option value="uiux">UI/UX Design</option>
+                        <option value="graphic">Graphic Design</option>
+                        <option value="webdesign">Web Design</option>
+                    </optgroup>
+                    <optgroup label="Маркетинг">
+                        <option value="seo">SEO</option>
+                        <option value="smm">SMM</option>
+                        <option value="email_marketing">Email Маркетинг</option>
+                    </optgroup>
+                    <optgroup label="Дані та Аналітика">
+                        <option value="data_science">Data Science</option>
+                        <option value="data_analyst">Data Analyst</option>
+                        <option value="machine_learning">Machine Learning</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!-- Випадний список із підказками (datalist) -->
+            <div class="form-group">
+                <label for="browser">Ваш улюблений браузер:</label>
+                <input list="browsers-list" id="browser" name="browser" value="" placeholder="Почніть вводити..." tabindex="19">
+                <datalist id="browsers-list">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                    <option value="Opera">
+                </datalist>
+            </div>
+        </fieldset>
+
+        <!-- Блок 3: Додаткова інформація та файли -->
+        <fieldset>
+            <legend>Додаткова інформація</legend>
+
+            <!-- Текстова область -->
+            <div class="form-group">
+                <label for="comments">Ваші коментарі:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Напишіть щось про себе..." tabindex="20"></textarea>
+            </div>
+
+            <!-- Завантаження аудіофайлів -->
+            <div class="form-group">
+                <label for="audioUpload">Завантажте ваші улюблені аудіо-треки:</label>
+                <!-- accept="audio/*" та multiple для багатьох файлів -->
+                <input type="file" id="audioUpload" name="audioUpload[]" accept="audio/*" multiple tabindex="21">
+            </div>
+        </fieldset>
+
+        <!-- Кнопки управління -->
+        <div class="form-group">
+            <button type="submit" name="action" value="submit" tabindex="22">Відправити дані</button>
+            <button type="reset" name="action" value="reset" tabindex="23">Очистити форму</button>
+        </div>
+    </form>
+
+    <!-- Блок з демонстрацією структури HTTP запитів -->
+    <div class="info-block">
+        <h3>Структура сформованих запитів:</h3>
+        
+        <p><strong>1. Якщо форма використовує <code>method="GET"</code>:</strong><br>
+        Дані передаються прямо в URL-адресі сторінки після знаку запитання (Query String). Файли при цьому <b>не</b> завантажуються на сервер.<br>
+        <i>Приклад URL (за умови заповнення полів):</i><br>
+        <code>questionnaire.html?fullName=Ivan+Ivanov&birthDate=2000-01-01&userEmail=test%40ukr.net&userPhone=%2B380991234567&userPass=aB1cde&gender=male&htmlLevel=intermediate&hobbies%5B%5D=sports&country=ua&course=frontend&browser=Chrome&comments=Test+text&action=submit</code></p>
+        
+        <p><strong>2. Якщо форма використовує <code>method="POST"</code> та <code>enctype="multipart/form-data"</code> (як у цій формі):</strong><br>
+        URL-адреса залишається чистою: <code>questionnaire.html</code><br>
+        Дані (включно із завантаженими аудіо-файлами) розбиваються на частини ("boundary") і передаються у Тілі Запиту (Body) непомітно для користувача. <br>
+        <i>Приклад структури тіла запиту (Payload):</i><br>
+        <code>
+        ------WebKitFormBoundary7MA4YWxkTrZu0gW<br>
+        Content-Disposition: form-data; name="fullName"<br><br>
+        Ivan Ivanov<br>
+        ------WebKitFormBoundary7MA4YWxkTrZu0gW<br>
+        Content-Disposition: form-data; name="audioUpload[]"; filename="track.mp3"<br>
+        Content-Type: audio/mpeg<br><br>
+        (Байт-код файлу...)<br>
+        ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+        </code></p>
+    </div>
+
+</body>
+</html>
