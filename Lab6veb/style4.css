@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+.nav-horizontal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0073b1;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-h-list {
+    list-style: none;
+}
+
+.nav-h-item {
+    float: left;
+    position: relative;
+}
+
+.nav-h-item.nav-h-right {
+    float: right;
+}
+
+.nav-h-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-h-item:hover > a,
+.nav-h-item.active > a {
+    background-color: #004b76;
+}
+
+.nav-h-item .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    list-style: none;
+}
+
+.nav-h-item .dropdown li a {
+    color: #333;
+    padding: 12px 16px;
+    justify-content: flex-start;
+}
+
+.nav-h-item .dropdown li a:hover {
+    background-color: #e8f4fb;
+    color: #0073b1;
+}
+
+.nav-h-item:hover .dropdown {
+    display: block;
+}
+
+.nav-h-list:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.content-wrapper {
+    margin-top: 54px;
+    display: flex;
+}
+
+.nav-vertical {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 54px);
+    background-color: #0073b1;
+    z-index: 900;
+}
+
+.nav-v-list {
+    list-style: none;
+}
+
+.nav-v-item {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-v-item a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-v-item:hover > a,
+.nav-v-item.active > a {
+    background-color: #005582;
+}
+
+.v-dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 180px;
+    background-color: #005582;
+    list-style: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.v-dropdown li {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.v-dropdown li a {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+.v-dropdown li:hover > a {
+    background-color: #003855;
+}
+
+.nav-v-item:hover > .level-2,
+.level-2 li:hover > .level-3 {
+    display: block;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 40px;
+    width: 100%;
+}

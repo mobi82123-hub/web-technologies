@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #b0b4b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.main-card {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 240px;
+    height: 240px;
+    background-color: #000000;
+    z-index: 2;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+}
+
+.arrow-controls {
+    position: absolute;
+    top: 60px;
+    left: -40px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+    color: #333;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.cloud {
+    position: absolute;
+    top: 50px;
+    right: -70px;
+    width: 220px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 50%, #ffffff 0%, #e0e0e0 60%, rgba(255,255,255,0) 100%);
+    border-radius: 50px;
+    opacity: 0.95;
+    z-index: 4;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.main-temp {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.forecast-card {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 220px;
+    height: 120px;
+    background-color: rgba(235, 237, 240, 0.85);
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 15px 10px;
+    border-radius: 2px;
+}
+
+.day-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.day-name {
+    font-size: 11px;
+    color: #888888;
+}
+
+.day-temp {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222222;
+}

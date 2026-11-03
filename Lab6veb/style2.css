@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.block-1 {
+    width: 150px;
+    height: 50px;
+    background-color: #00b050;
+    border: 2px solid black;
+    line-height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.block-2 {
+    width: 300px;
+    height: 50px;
+    background-color: #5b9bd5;
+    border: 2px solid black;
+    line-height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 174px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.block-3 {
+    width: 300px;
+    height: 100px;
+    background-color: #5e4b85;
+    border: 2px solid black;
+    line-height: 100px;
+    position: absolute;
+    top: 74px;
+    left: 174px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.block-1:hover + .block-2,
+.block-2:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.block-2:hover + .block-3,
+.block-3:hover {
+    opacity: 1;
+    visibility: visible;
+}
