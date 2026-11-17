@@ -1,0 +1,87 @@
+$colors: (
+  accent: #f95858,
+  accent-hover: #e44646,
+  'teal': #2cd5c4,
+  text-dark: #3a3a3c,
+  text: #666a6e,
+  muted: #9aa0a6,
+  bg-light: #f0f3f4,
+  border: #e1e5e8,
+  footer: #2a2a2d,
+  overlay: rgb(30 32 36 / 82%),
+  'white': #fff,
+  footer-line: rgb(255 255 255 / 12%),
+  thumb-1: #6d5e55,
+  thumb-2: #4a4e59,
+  thumb-3: #7fb0cd,
+  thumb-4: #4c4c4c,
+);
+$font-families: (
+  heading: (
+    'Oswald',
+    sans-serif,
+  ),
+  body: (
+    'Open Sans',
+    sans-serif,
+  ),
+  logo: (
+    'Dancing Script',
+    cursive,
+  ),
+);
+$spacing: (
+  2xs: 4px,
+  xs: 8px,
+  sm: 12px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  2xl: 48px,
+);
+$breakpoints: (
+  tablet: 768px,
+  desktop: 1280px,
+);
+$layout-mobile: (
+  header-h: 70px,
+  container-pad: 20px,
+  container-max: 1100px,
+  section-space: 56px,
+  grid-gap: 12px,
+  service-icon: 72px,
+  thumb: 96px,
+);
+$type-mobile: (
+  fs-h1: 26px,
+  fs-cta: 22px,
+  fs-ui: 12px,
+  fs-quote: 16px,
+  fs-stat: 38px,
+  fs-logo: 22px,
+  logo-mark: 34px,
+);
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $font-families {
+    --font-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $spacing {
+    --space-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $layout-mobile {
+    --#{$name}: #{$value};
+  }
+
+  @each $name, $value in $type-mobile {
+    --#{$name}: #{$value};
+  }
+
+  --card-ratio: 1 / 0.72;
+}

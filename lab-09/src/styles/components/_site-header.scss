@@ -1,0 +1,227 @@
+@use '../abstracts' as *;
+
+.site-header {
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__burger {
+    @include flex-center(column, 5px);
+
+    width: 40px;
+    height: 40px;
+
+    @include focus-ring;
+  }
+
+  &__burger-bar {
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-dark);
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
+  }
+
+  &__inner:has(.site-nav:popover-open) &__burger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  &__inner:has(.site-nav:popover-open) &__burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__inner:has(.site-nav:popover-open) &__burger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-dark);
+  font-family: var(--font-logo);
+  font-size: var(--fs-logo);
+  font-weight: 700;
+  line-height: 1;
+
+  &__mark {
+    @include flex-center;
+
+    width: var(--logo-mark);
+    height: var(--logo-mark);
+    margin-right: 2px;
+    border-radius: 50%;
+    background: var(--color-text-dark);
+    color: var(--color-white);
+  }
+}
+
+.site-nav {
+  position: fixed;
+  inset: var(--header-h) 0 auto;
+  width: 100%;
+  max-height: calc(100vh - var(--header-h));
+  margin: 0;
+  padding: var(--space-sm) var(--container-pad) var(--space-xl);
+  overflow-y: auto;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: inherit;
+
+  &:popover-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    display: block;
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-size: var(--fs-ui);
+    transition: color 0.3s;
+
+    &:hover,
+    &--current {
+      color: var(--color-accent);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  &__contact {
+    width: 100%;
+  }
+
+  &__favourite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    width: 100%;
+    padding: 14px 32px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: var(--fs-ui);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition:
+      color 0.3s,
+      border-color 0.3s;
+
+    @include focus-ring;
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .icon {
+      color: var(--color-accent);
+    }
+  }
+
+  &__extra {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-md);
+    color: var(--color-muted);
+
+    a:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  @include mq(tablet) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+    width: auto;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+
+    &:popover-open {
+      flex-direction: row;
+    }
+
+    &__list {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    &__link {
+      padding: 0;
+      border: 0;
+    }
+
+    &__actions {
+      flex-direction: row;
+      margin: 0;
+    }
+
+    &__favourite {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-white);
+
+      .icon {
+        color: var(--color-white);
+      }
+
+      &:hover {
+        background: var(--color-accent-hover);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    &__list {
+      gap: 40px;
+    }
+  }
+}
+
+.site-header__burger,
+.site-nav__contact,
+.site-nav__extra,
+.site-nav__favourite-text {
+  @include mq(tablet) {
+    display: none;
+  }
+}

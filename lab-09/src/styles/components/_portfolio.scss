@@ -1,0 +1,117 @@
+@use '../abstracts' as *;
+
+.portfolio {
+  &__input {
+    @include visually-hidden;
+
+    @each $category in all, branding, identity, print, web, motion {
+      &--#{$category}:checked ~ .portfolio__top .portfolio__chip--#{$category} {
+        border-color: var(--color-accent);
+        background: var(--color-accent);
+        color: var(--color-white);
+      }
+    }
+
+    &--branding:checked ~ .portfolio__grid .work-card:not([data-category='branding']),
+    &--identity:checked ~ .portfolio__grid .work-card:not([data-category='identity']),
+    &--print:checked ~ .portfolio__grid .work-card:not([data-category='print']),
+    &--web:checked ~ .portfolio__grid .work-card:not([data-category='web']),
+    &--motion:checked ~ .portfolio__grid .work-card:not([data-category='motion']) {
+      display: none;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  &__chips {
+    display: flex;
+    gap: var(--space-xs);
+    margin-right: calc(var(--container-pad) * -1);
+    padding-right: var(--container-pad);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__chip {
+    flex-shrink: 0;
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-size: var(--fs-ui);
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s,
+      color 0.3s;
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+
+  input.portfolio__input {
+    &:focus-visible ~ .portfolio__top .portfolio__chip {
+      outline-offset: 2px;
+    }
+
+    @each $category in all, branding, identity, print, web, motion {
+      &--#{$category}:focus-visible ~ .portfolio__top .portfolio__chip--#{$category} {
+        outline: 2px solid var(--color-teal);
+      }
+    }
+  }
+
+  &__count {
+    margin-bottom: var(--space-md);
+    color: var(--color-muted);
+    font-size: rem(12);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-2xl);
+  }
+
+  @include mq(tablet) {
+    &__chips {
+      flex-wrap: wrap;
+      margin-right: 0;
+      padding-right: 0;
+      overflow: visible;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include mq(desktop) {
+    &__top {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.newsletter-form {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px var(--space-md);
+    border: 1px solid var(--color-footer-line);
+    background: rgb(255 255 255 / 5%);
+    color: var(--color-white);
+
+    &::placeholder {
+      color: var(--color-muted);
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: var(--color-teal);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-accent);
+    }
+  }
+
+  &__consent {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+    color: var(--color-muted);
+    font-size: rem(12);
+    cursor: pointer;
+
+    input {
+      accent-color: var(--color-teal);
+    }
+  }
+
+  &__error {
+    display: none;
+    margin-top: var(--space-xs);
+    color: var(--color-accent);
+    font-size: rem(12);
+  }
+
+  &:has(.newsletter-form__input:user-invalid) .newsletter-form__error--email,
+  &:has(.newsletter-form__checkbox:user-invalid) .newsletter-form__error--consent {
+    display: block;
+  }
+
+  @include mq(tablet) {
+    &__row {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+}

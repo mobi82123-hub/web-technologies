@@ -1,0 +1,16 @@
+include ../../mixins/ui
+
+section#services.section.services(aria-labelledby='services-title')
+  .layout-container
+    +section-heading(
+      'What do we do',
+      'We are a small team of designers and makers who help brands look their best online and offline.',
+      'services-title',
+    )
+    ul.services__list
+      each service, i in services
+        li.services__item
+          span.services__icon
+            +icon(service.icon, 32)
+          h3.services__title= service.title
+          p.services__description= service.text

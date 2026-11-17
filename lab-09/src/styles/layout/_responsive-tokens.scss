@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+@include mq(tablet) {
+  :root {
+    --container-pad: 40px;
+    --section-space: 72px;
+    --card-ratio: 1 / 0.79;
+    --service-icon: 96px;
+    --thumb: 150px;
+    --fs-h1: 32px;
+    --fs-cta: 24px;
+    --fs-ui: 13px;
+    --fs-quote: 19px;
+    --fs-stat: 40px;
+    --fs-logo: 26px;
+    --logo-mark: 40px;
+  }
+}
+
+@include mq(desktop) {
+  :root {
+    --container-pad: 90px;
+    --section-space: 90px;
+    --grid-gap: 14px;
+    --fs-h1: 40px;
+    --fs-cta: 28px;
+    --fs-quote: 22px;
+    --fs-stat: 48px;
+  }
+}

@@ -1,0 +1,23 @@
+include ../../mixins/ui
+
+section#journal.section.journal(aria-labelledby='journal-title')
+  .layout-container
+    +section-heading(
+      'From the journal',
+      'Notes on process, case studies and things that inspire us.',
+      'journal-title',
+    )
+    .journal__list
+      each article, i in articles
+        article.journal-card(class=`journal-card--${i + 1}`)
+          .journal-card__thumb(class=`journal-card__thumb--${i + 1}`, aria-hidden='true')
+          .journal-card__info
+            p.journal-card__meta
+              time(datetime=article.day)= article.date
+              |
+              | / #{ article.category }
+            h3.journal-card__title= article.title
+            p.journal-card__text Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+            a.journal-card__read-more(href='#journal')
+              | Read more
+              +icon('chevron', 12)

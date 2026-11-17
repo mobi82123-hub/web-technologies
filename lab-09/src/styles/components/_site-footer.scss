@@ -1,0 +1,113 @@
+@use '../abstracts' as *;
+
+.site-footer {
+  padding: var(--section-space) 0 var(--space-xl);
+  background: var(--color-footer);
+  color: var(--color-white);
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-footer-line);
+  }
+
+  &__title {
+    margin-bottom: var(--space-md);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: rem(14);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__newsletter {
+    &-text {
+      margin-bottom: var(--space-md);
+      color: var(--color-muted);
+    }
+  }
+
+  &__success {
+    display: none;
+    padding: var(--space-md);
+    border: 1px solid var(--color-teal);
+    color: var(--color-teal);
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-xl);
+  }
+
+  &__column {
+    flex: 1;
+
+    li + li {
+      margin-top: var(--space-sm);
+    }
+
+    a {
+      color: var(--color-muted);
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
+    color: var(--color-muted);
+    font-size: rem(13);
+    text-align: center;
+  }
+
+  .social-list__link {
+    background: rgb(255 255 255 / 10%);
+    color: var(--color-white);
+
+    &:hover {
+      background: var(--color-accent);
+    }
+  }
+
+  &__newsletter:target &__newsletter-text,
+  &__newsletter:target .newsletter-form {
+    display: none;
+  }
+
+  &__newsletter:target &__success {
+    display: block;
+  }
+
+  @include mq(tablet) {
+    &__top {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: var(--space-2xl);
+    }
+
+    &__newsletter {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    &__links {
+      gap: var(--space-2xl);
+    }
+
+    &__bottom {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+}

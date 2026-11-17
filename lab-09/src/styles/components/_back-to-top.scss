@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.back-to-top {
+  position: fixed;
+  z-index: 90;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-white);
+  transition: background-color 0.3s;
+
+  @include focus-ring;
+
+  &:hover {
+    background: var(--color-accent-hover);
+  }
+
+  @include mq(tablet) {
+    right: var(--space-lg);
+    bottom: var(--space-lg);
+  }
+}

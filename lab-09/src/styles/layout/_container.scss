@@ -1,0 +1,14 @@
+.layout-container {
+  width: 100%;
+  max-width: calc(var(--container-max) + 2 * var(--container-pad));
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.site-main {
+  padding-top: var(--header-h);
+}
+
+.section {
+  padding-block: calc(var(--section-space) / 2);
+}

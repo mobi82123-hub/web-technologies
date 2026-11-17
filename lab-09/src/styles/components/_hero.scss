@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.hero {
+  background: var(--color-bg-light);
+  text-align: center;
+
+  &__inner {
+    max-width: calc(700px + 2 * var(--container-pad));
+  }
+
+  &__eyebrow {
+    margin-bottom: var(--space-md);
+    color: var(--color-muted);
+    font-family: var(--font-heading);
+    font-size: var(--fs-ui);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: var(--color-text-dark);
+    font-size: var(--fs-h1);
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.35;
+  }
+
+  &__description {
+    max-width: 620px;
+    margin: var(--space-lg) auto var(--space-xl);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  @include mq(tablet) {
+    &__actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

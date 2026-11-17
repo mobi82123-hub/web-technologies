@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+h1,
+h2,
+h3,
+.button,
+.portfolio__chip,
+.site-nav__link {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+%section-title {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-dark);
+  font-size: rem(22);
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.section-description {
+  max-width: 700px;
+  margin-bottom: var(--space-xl);
+  color: var(--color-muted);
+}
+
+.section-heading {
+  margin-bottom: var(--space-xl);
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__description {
+    max-width: 700px;
+    color: var(--color-muted);
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+
+  &--fill {
+    fill: currentcolor;
+    stroke: none;
+  }
+}

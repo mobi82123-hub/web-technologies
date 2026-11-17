@@ -1,0 +1,8 @@
+include ../../mixins/ui
+
+section.section.callout(aria-labelledby='callout-title')
+  .layout-container.callout__inner
+    h2#callout-title.callout__title Would you love to work with us?
+    +btn('Contact us', '#contact', 'primary')
+      +icon('mail', 16)
+      span Contact us

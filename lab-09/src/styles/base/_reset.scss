@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+  text-size-adjust: 100%;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: rem(14);
+  line-height: rem(22);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+input {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  @include visually-hidden;
+
+  &:focus-visible {
+    position: fixed;
+    z-index: 1000;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    width: auto;
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    clip: auto;
+    background: var(--color-white);
+    color: var(--color-text-dark);
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.site-icons {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

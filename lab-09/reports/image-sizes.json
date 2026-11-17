@@ -1,0 +1,342 @@
+{
+  "generatedAt": "2026-11-17T15:47:01.232Z",
+  "widths": [
+    320,
+    358
+  ],
+  "sources": [
+    {
+      "file": "work-1.webp",
+      "bytes": 3028
+    },
+    {
+      "file": "work-2.webp",
+      "bytes": 4684
+    },
+    {
+      "file": "work-3.webp",
+      "bytes": 1004
+    },
+    {
+      "file": "work-4.webp",
+      "bytes": 2500
+    },
+    {
+      "file": "work-5.webp",
+      "bytes": 2358
+    },
+    {
+      "file": "work-6.webp",
+      "bytes": 2920
+    },
+    {
+      "file": "work-7.webp",
+      "bytes": 4898
+    },
+    {
+      "file": "work-8.webp",
+      "bytes": 4564
+    }
+  ],
+  "outputs": [
+    {
+      "file": "work-1-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1248
+    },
+    {
+      "file": "work-1-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 1716
+    },
+    {
+      "file": "work-1-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 3214
+    },
+    {
+      "file": "work-1-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 1500
+    },
+    {
+      "file": "work-1-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 2132
+    },
+    {
+      "file": "work-1-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 3709
+    },
+    {
+      "file": "work-2-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1924
+    },
+    {
+      "file": "work-2-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 2642
+    },
+    {
+      "file": "work-2-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 4840
+    },
+    {
+      "file": "work-2-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 2324
+    },
+    {
+      "file": "work-2-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 3406
+    },
+    {
+      "file": "work-2-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 5846
+    },
+    {
+      "file": "work-3-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 683
+    },
+    {
+      "file": "work-3-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 690
+    },
+    {
+      "file": "work-3-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 1871
+    },
+    {
+      "file": "work-3-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 700
+    },
+    {
+      "file": "work-3-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 842
+    },
+    {
+      "file": "work-3-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 2112
+    },
+    {
+      "file": "work-4-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1032
+    },
+    {
+      "file": "work-4-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 1412
+    },
+    {
+      "file": "work-4-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 2842
+    },
+    {
+      "file": "work-4-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 1212
+    },
+    {
+      "file": "work-4-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 1838
+    },
+    {
+      "file": "work-4-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 3317
+    },
+    {
+      "file": "work-5-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 991
+    },
+    {
+      "file": "work-5-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 1464
+    },
+    {
+      "file": "work-5-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 3227
+    },
+    {
+      "file": "work-5-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 1049
+    },
+    {
+      "file": "work-5-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 1756
+    },
+    {
+      "file": "work-5-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 3682
+    },
+    {
+      "file": "work-6-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1366
+    },
+    {
+      "file": "work-6-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 1772
+    },
+    {
+      "file": "work-6-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 3397
+    },
+    {
+      "file": "work-6-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 1756
+    },
+    {
+      "file": "work-6-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 2246
+    },
+    {
+      "file": "work-6-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 4205
+    },
+    {
+      "file": "work-7-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1804
+    },
+    {
+      "file": "work-7-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 2736
+    },
+    {
+      "file": "work-7-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 4969
+    },
+    {
+      "file": "work-7-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 2273
+    },
+    {
+      "file": "work-7-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 3636
+    },
+    {
+      "file": "work-7-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 5865
+    },
+    {
+      "file": "work-8-320.avif",
+      "width": 320,
+      "format": "avif",
+      "bytes": 1883
+    },
+    {
+      "file": "work-8-320.webp",
+      "width": 320,
+      "format": "webp",
+      "bytes": 2716
+    },
+    {
+      "file": "work-8-320.jpg",
+      "width": 320,
+      "format": "jpg",
+      "bytes": 4252
+    },
+    {
+      "file": "work-8-358.avif",
+      "width": 358,
+      "format": "avif",
+      "bytes": 2211
+    },
+    {
+      "file": "work-8-358.webp",
+      "width": 358,
+      "format": "webp",
+      "bytes": 3396
+    },
+    {
+      "file": "work-8-358.jpg",
+      "width": 358,
+      "format": "jpg",
+      "bytes": 5256
+    }
+  ],
+  "totals": {
+    "sourceBytes": 25956,
+    "outputBytes": 120960,
+    "byFormat": {
+      "avif": 23956,
+      "webp": 34400,
+      "jpg": 62604
+    },
+    "savingsAgainstSourceBytes": -95004,
+    "outputVariants": 48
+  }
+}

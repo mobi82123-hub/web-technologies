@@ -1,0 +1,10 @@
+include ../../mixins/ui
+
+section#home.section.hero(aria-labelledby='hero-title')
+  .layout-container.hero__inner
+    p.hero__eyebrow Independent creative studio · London
+    h1#hero-title.hero__title We’re Keepsake, a Digital & Branding Agency
+    p.hero__description Specialising in web design, posters, motion video, based in London. We love to turn ideas into beautiful things.
+    .hero__actions
+      +btn('See our works', '#works', 'primary')
+      +btn('Get in touch', '#contact', 'secondary')(aria-label='Get in touch with Keepsake')

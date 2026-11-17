@@ -1,0 +1,7 @@
+section.stats(aria-label='Keepsake studio in numbers')
+  .layout-container
+    ul.stats__list
+      each statistic, i in statistics
+        li.stats__item
+          span.stats__number= statistic.value
+          span.stats__label= statistic.label

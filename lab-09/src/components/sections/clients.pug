@@ -1,0 +1,21 @@
+section.section.clients(aria-labelledby='clients-title')
+  .layout-container
+    h2#clients-title.section-title Clients & kind words
+    p.section-description Some of the teams that scaled up with their brands.
+    ul.clients__list
+      each client, i in clients
+        li.clients__item= client
+    figure.testimonial
+      span.testimonial__quote(aria-hidden='true') “
+      blockquote.testimonial__body
+        p Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
+      .testimonial__bottom
+        figcaption.testimonial__author
+          span.testimonial__avatar(aria-hidden='true') OM
+          span.testimonial__author-info
+            strong Olena Marchenko
+            span Marketing Lead, Nordly
+        .testimonial__dots(aria-hidden='true')
+          span.testimonial__dot.testimonial__dot--active
+          span.testimonial__dot
+          span.testimonial__dot

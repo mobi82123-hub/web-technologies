@@ -1,0 +1,45 @@
+include ../mixins/ui
+
+footer#contact.site-footer
+  .layout-container
+    .site-footer__top
+      section#subscribed.site-footer__newsletter(aria-labelledby='newsletter-title')
+        h2#newsletter-title.site-footer__title Newsletter
+        p.site-footer__newsletter-text Fresh case studies and design news, once a month.
+        form.newsletter-form(action='#subscribed', method='get')
+          .newsletter-form__row
+            label.visually-hidden(for='newsletter-email') Email address
+            input#newsletter-email.newsletter-form__input(
+              type='email',
+              name='email',
+              placeholder='Your email address',
+              required,
+              aria-describedby='email-error'
+            )
+            button.button.button--primary(type='submit') Subscribe
+          p#email-error.newsletter-form__error.newsletter-form__error--email Please enter a valid email address.
+          label.newsletter-form__consent(for='newsletter-consent')
+            input#newsletter-consent.newsletter-form__checkbox(
+              type='checkbox',
+              name='consent',
+              required,
+              aria-describedby='consent-error'
+            )
+            | I agree to the privacy policy
+          p#consent-error.newsletter-form__error.newsletter-form__error--consent Please accept the privacy policy.
+        p.site-footer__success(role='status') Thank you! You are subscribed to our newsletter.
+      .site-footer__links
+        each column, i in footerColumns
+          section.site-footer__column
+            h2.site-footer__title= column.title
+            ul
+              each link in column.links
+                li
+                  a(href=link.href)= link.label
+    .site-footer__bottom
+      ul.social-list(aria-label='Keepsake on social media')
+        each social in socials
+          li.social-list__item
+            a.social-list__link(href='#contact', aria-label=social.label)
+              +icon(social.name, 16)
+      p.site-footer__copyright &copy; 2026 Keepsake. All rights reserved.

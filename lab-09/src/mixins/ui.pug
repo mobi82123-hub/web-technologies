@@ -1,0 +1,95 @@
+mixin icon(name, size = 16, label = '')
+  svg.icon(
+    width=size,
+    height=size,
+    role=label ? 'img' : 'presentation',
+    aria-label=label || false,
+    aria-hidden=label ? false : 'true'
+  )
+    if label
+      title= label
+    case name
+      when 'heart'
+        use(href='#i-heart')
+      when 'mail'
+        use(href='#i-mail')
+      when 'arrow-up'
+        use(href='#i-arrow-up')
+      when 'plus'
+        use(href='#i-plus')
+      when 'chevron'
+        use(href='#i-chevron')
+      when 'web'
+        use(href='#i-web')
+      when 'motion'
+        use(href='#i-motion')
+      when 'print'
+        use(href='#i-print')
+      when 'pen'
+        use(href='#i-pen')
+      when 'facebook'
+        use(href='#i-facebook')
+      when 'twitter'
+        use(href='#i-twitter')
+      when 'dribbble'
+        use(href='#i-dribbble')
+      when 'instagram'
+        use(href='#i-instagram')
+      when 'youtube'
+        use(href='#i-youtube')
+      default
+        use(href='#i-chevron')
+
+mixin btn(label, href = '#', modifier = 'primary')
+  a.button(
+    href=href,
+    class={ 'button--primary': modifier === 'primary', 'button--secondary': modifier === 'secondary', 'button--compact': modifier === 'compact' }
+  )&attributes(attributes)
+    if block
+      block
+    else
+      span= label
+
+mixin picture(asset, alt, width = 358, height = 282, sizes = '(min-width: 1280px) 32vw, (min-width: 768px) 50vw, 100vw', loading = 'lazy')
+  picture.responsive-picture
+    source(
+      type='image/avif',
+      srcset=`/images/${asset}-320.avif 320w, /images/${asset}-358.avif 358w`,
+      sizes=sizes
+    )
+    source(
+      type='image/webp',
+      srcset=`/images/${asset}-320.webp 320w, /images/${asset}-358.webp 358w`,
+      sizes=sizes
+    )
+    img(
+      src=`/images/${asset}-358.jpg`,
+      alt=alt,
+      width=width,
+      height=height,
+      loading=loading,
+      decoding='async',
+      fetchpriority=loading === 'eager' ? 'high' : 'auto'
+    )
+
+mixin work-card(work, index)
+  li.work-card(
+    data-category=work.category,
+    class={ 'work-card--tablet': work.visibility === 'tablet', 'work-card--desktop': work.visibility === 'desktop' }
+  )
+    a.work-card__link(href='#contact', aria-label=`View ${work.title} project`)
+      +picture(work.image, work.alt)
+      span.work-card__overlay
+        span.work-card__plus
+          +icon('plus', 20)
+        h3.work-card__title= work.title
+        span.work-card__category= categories.find((category) => category.id === work.category).label
+
+mixin section-heading(title, description = '', id = '')
+  header.section-heading
+    h2.section-heading__title(id=id || false)= title
+    if description
+      p.section-heading__description= description
+    if block
+      .section-heading__extra
+        block

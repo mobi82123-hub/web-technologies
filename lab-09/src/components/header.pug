@@ -1,0 +1,41 @@
+include ../mixins/ui
+
+header.site-header
+  .layout-container.site-header__inner
+    a.wordmark(href='#home', aria-label='Keepsake — home')
+      span.wordmark__mark(aria-hidden='true') K
+      span(aria-hidden='true') eepsake
+    button.site-header__burger(
+      type='button',
+      popovertarget='site-menu',
+      popovertargetaction='toggle',
+      aria-controls='site-menu',
+      aria-label='Toggle menu'
+    )
+      span.site-header__burger-bar
+      span.site-header__burger-bar
+      span.site-header__burger-bar
+    nav#site-menu.site-nav(popover, aria-label='Main navigation')
+      ul.site-nav__list
+        each item, i in navigation
+          li
+            a.site-nav__link(
+              href=item.href,
+              class={ 'site-nav__link--current': item.current },
+              aria-current=item.current ? 'page' : false
+            )= item.label
+      .site-nav__actions
+        +btn('Contact us', '#contact', 'primary').site-nav__contact
+        button.site-nav__favourite(type='button', aria-label='Favourites')
+          +icon('heart', 14)
+          span.site-nav__favourite-text Favourites
+      .site-nav__extra
+        address.site-nav__contacts
+          a(href='mailto:hello@keepsake.studio') hello@keepsake.studio
+          a(href='tel:+442079460000') +44 20 7946 0000
+          span London, United Kingdom
+        ul.social-list(aria-label='Social media')
+          each social in socials
+            li.social-list__item
+              a.social-list__link(href='#contact', aria-label=social.label)
+                +icon(social.name, 16)

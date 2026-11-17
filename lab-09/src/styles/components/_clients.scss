@@ -1,0 +1,127 @@
+@use '../abstracts' as *;
+
+.clients {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-md);
+    margin-bottom: var(--space-2xl);
+    color: var(--color-muted);
+    font-family: var(--font-heading);
+    font-size: rem(18);
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    padding-block: var(--space-xs);
+  }
+
+  @include mq(tablet) {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @include mq(desktop) {
+    &__list {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+
+.testimonial {
+  padding: var(--space-lg);
+  background: var(--color-bg-light);
+
+  &__quote {
+    display: block;
+    height: 36px;
+    color: var(--color-accent);
+    font-family: Georgia, serif;
+    font-size: rem(64);
+    line-height: 1;
+  }
+
+  &__body p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-dark);
+    font-size: var(--fs-quote);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  &__bottom,
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__bottom {
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  &__author {
+    gap: var(--space-sm);
+  }
+
+  &__avatar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    color: var(--color-white);
+    font-size: rem(13);
+    font-weight: 700;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+
+    strong {
+      color: var(--color-text-dark);
+      font-family: var(--font-heading);
+      font-size: rem(13);
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: var(--color-muted);
+      font-size: rem(12);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+
+    &--active {
+      background: var(--color-accent);
+    }
+  }
+
+  @include mq(tablet) {
+    padding: var(--space-xl);
+  }
+
+  @include mq(desktop) {
+    padding: var(--space-2xl);
+  }
+}

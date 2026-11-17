@@ -1,0 +1,24 @@
+include ../../mixins/ui
+
+section#works.section.portfolio(aria-labelledby='works-title')
+  .layout-container
+    .portfolio__filter
+      each category in categories
+        input.portfolio__input(
+          class=`portfolio__input--${category.id}`,
+          type='radio',
+          name='portfolio-filter',
+          id=`filter-${category.id}`,
+          checked=category.active || false
+        )
+      .portfolio__top
+        h2#works-title.section-title Our awesome works
+        .portfolio__chips(role='group', aria-label='Filter works by category')
+          each category in categories
+            label.portfolio__chip(class=`portfolio__chip--${category.id}`, for=`filter-${category.id}`)= category.label
+      p.portfolio__count #{ works.length } thoughtful projects, made with care.
+      ul.portfolio__grid
+        each work, i in works
+          +work-card(work, i)
+      .portfolio__more
+        +btn('Load more works', '#works', 'secondary').button--mobile-block
